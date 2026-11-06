@@ -1,0 +1,28 @@
+name: ci
+
+# 宪法质量门禁（CI 化——T050）：类型检查 + 单元/契约 + 渲染回归 + 版本唯一/统一 + 文档-测试覆盖审计
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+
+jobs:
+  gates:
+    runs-on: macos-latest   # SwiftShader 渲染确定性基线在 macOS/linux 实测一致（research R1）
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 11.17.0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: npx playwright install chromium
+      - run: pnpm check:three-version
+      - run: pnpm check:pkg-versions
+      - run: pnpm build
+      - run: pnpm typecheck
+      - run: pnpm test          # 单元 + 契约 + SC-006 覆盖审计
+      - run: pnpm test:render   # 探针/渲染冒烟/黄金图（含容差）/交互/泄漏/http 端到端

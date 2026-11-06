@@ -1,0 +1,29 @@
+{
+  "name": "threed",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Threed 3D 技术底座：统一的三维组件/物品/环境生成平台核心运行时",
+  "engines": {
+    "node": ">=22"
+  },
+  "packageManager": "pnpm@11.17.0",
+  "scripts": {
+    "build": "pnpm -r build",
+    "typecheck": "pnpm -r typecheck",
+    "test": "vitest run",
+    "test:render": "playwright test",
+    "dev": "pnpm --filter @threed/demo dev",
+    "http:serve": "pnpm --filter @threed/http serve",
+    "check:three-version": "node scripts/check-three-version.mjs",
+    "schema:export": "node scripts/export-json-schema.mjs",
+    "check:pkg-versions": "node scripts/check-pkg-versions.mjs"
+  },
+  "devDependencies": {
+    "@playwright/test": "catalog:",
+    "typescript": "catalog:",
+    "vitest": "catalog:",
+    "vite": "catalog:",
+    "@types/node": "catalog:"
+  }
+}

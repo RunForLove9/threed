@@ -1,0 +1,33 @@
+{
+  "name": "@threed/core",
+  "version": "0.1.0",
+  "description": "Threed 运行时内核：场景树 / 组件注册表 / 交互 / 可序列化 schema / 度量（不直接对外，公共面经 @threed/sdk）",
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "three": "catalog:",
+    "zod": "catalog:"
+  },
+  "devDependencies": {
+    "@types/three": "catalog:",
+    "tsup": "catalog:",
+    "typescript": "catalog:",
+    "@types/node": "catalog:"
+  }
+}

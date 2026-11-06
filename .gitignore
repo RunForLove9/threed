@@ -1,0 +1,14 @@
+node_modules/
+dist/
+build/
+coverage/
+test-results/
+playwright-report/
+*.log
+.DS_Store
+.env*
+*.tmp
+.vite/
+
+# 外部克隆的技能仓库（自带 .git，不入库）
+threejs-skills/

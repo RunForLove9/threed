@@ -1,0 +1,35 @@
+{
+  "name": "@threed/sdk",
+  "version": "0.1.0",
+  "description": "Threed 公共 SDK 门面：类型 + 文档 + 显式 three 逃生舱（公共 API 唯一出口）",
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@threed/core": "workspace:*"
+  },
+  "peerDependencies": {
+    "three": "catalog:"
+  },
+  "devDependencies": {
+    "tsup": "catalog:",
+    "typescript": "catalog:",
+    "@types/node": "catalog:",
+    "vite": "catalog:"
+  }
+}

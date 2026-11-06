@@ -1,0 +1,24 @@
+{
+  "name": "@threed/http",
+  "version": "0.1.0",
+  "description": "Threed 无头渲染服务骨架：GET /health + POST /render（node:http 零框架 + Playwright SwiftShader）",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "build": "tsup && vite build --config vite.render-page.config.ts",
+    "serve": "node dist/index.js",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@threed/core": "workspace:*",
+    "playwright": "catalog:"
+  },
+  "devDependencies": {
+    "typescript": "catalog:",
+    "@types/node": "catalog:",
+    "tsup": "catalog:",
+    "vite": "catalog:",
+    "@types/three": "catalog:",
+    "@playwright/test": "catalog:"
+  }
+}

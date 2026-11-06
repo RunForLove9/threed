@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "1.0.0",
+  "metadata": { "name": "threed-standard-scene" },
+  "tree": {
+    "id": "root",
+    "type": "core.group",
+    "props": {},
+    "children": [
+      { "id": "env", "type": "core.environment", "props": { "background": "#101014", "fog": null }, "children": [] },
+      { "id": "rig", "type": "core.group", "props": { "position": [0, 0, 0] }, "children": [
+        { "id": "cam", "type": "core.camera.perspective", "props": { "position": [0, 1.6, 5.5] }, "children": [
+          { "id": "orbit", "type": "core.control.orbit", "props": { "target": [0, 0.5, 0], "enableDamping": false }, "children": [] }
+        ] }
+      ] },
+      { "id": "amb", "type": "core.light.ambient", "props": { "intensity": 0.55 }, "children": [] },
+      { "id": "sun", "type": "core.light.directional", "props": { "intensity": 1.1 }, "children": [] },
+      { "id": "floor", "type": "core.mesh.plane", "props": { "position": [0, 0, 0], "rotation": [-1.5707963267948966, 0, 0], "geometry": { "size": [12, 12] }, "material": { "color": "#2b2f3a" } }, "children": [] },
+      { "id": "row", "type": "core.group", "props": {}, "children": [
+        { "id": "box1", "type": "core.mesh.box", "props": { "position": [-2.2, 0.5, 0], "material": { "color": "#e8b04b" } }, "children": [ { "id": "p1", "type": "core.pickable", "props": {}, "children": [] } ] },
+        { "id": "sph1", "type": "core.mesh.sphere", "props": { "position": [-0.7, 0.5, 0], "material": { "color": "#7fd1ae" } }, "children": [] },
+        { "id": "cyl1", "type": "core.mesh.cylinder", "props": { "position": [0.8, 0.5, 0], "material": { "color": "#d97b66" } }, "children": [] },
+        { "id": "tor1", "type": "core.mesh.torus", "props": { "position": [2.3, 0.6, 0], "rotation": [1.2, 0, 0], "material": { "color": "#9aa4b2" } }, "children": [] }
+      ] }
+    ]
+  }
+}
